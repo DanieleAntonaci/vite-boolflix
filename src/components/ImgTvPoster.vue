@@ -8,7 +8,6 @@ export default {
         return {
             store,
             flag: ['en', 'fr', 'it', 'ja'],
-            avaregeFiveNum: [1, 2, 3, 4, 5],
         }
     },
 }
@@ -38,8 +37,8 @@ export default {
                     
                     <!-- voto -->
                     <div>
-                        <span v-for="(n, i) in avaregeFiveNum" :key="i">
-                            <font-awesome-icon icon="fa-solid fa-star" v-if="Math.floor(element.vote_average / 2) >= i + 1"/>
+                        <span v-for="i in 5" :key="i">
+                            <font-awesome-icon icon="fa-solid fa-star" v-if="Math.floor(element.vote_average / 2) >= i"/>
                             <!-- <font-awesome-icon icon="fa-regular fa-star" /> -->
                         </span>
                     </div>
