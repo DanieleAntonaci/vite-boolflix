@@ -15,15 +15,14 @@ export default {
 
 <template>
     <div>
-        <h2>Fim</h2>
-
+        <h2>Serie tv</h2>
         <ul>
             <li v-for="element in posterFilmAndTv">
-                1.  {{ element.title }}
+                1.  {{ element.name }}
                 <br>
-                2.  {{ element.original_title }}
+                2.  {{ element.original_name }}
                 <br>
-                <img class="poster" :src="store.apiImgUrl + element.poster_path" :alt="element.title">
+                <img class="poster" :src="store.apiImgUrl + element.poster_path" :alt="element.name">
                 <br>
                 <img class="flag" :src="'/flag/' + element.original_language + '.png'" :alt="element.original_language">
                 <br>

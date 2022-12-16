@@ -4,12 +4,15 @@ import { store } from '../store.js';
 import axios from 'axios';
 import SearchFilm from './SearchFilm.vue';
 import ImgMoviePoster from './ImgMoviePoster.vue';
+import ImgTvPoster from './ImgTvPoster.vue'
 
 export default {
     components: {
         SearchFilm,
-        ImgMoviePoster
-    }, props: {
+        ImgMoviePoster,
+        ImgTvPoster
+    },
+    props: {
 
     },
     data() {
@@ -19,13 +22,21 @@ export default {
         }
     }, methods: {
         getFilmData() {
-            let myUrl = store.apiUrl;
-            myUrl += `&${store.apiNameParameter}=${store.searchNameMovie}`
-            axios.get(myUrl)
+            let filmUrl = store.apiFilmUrl;
+            let tvUrl = store.apiTvUrl
+            filmUrl += `&${store.apiNameParameter}=${store.searchNameMovie}`
+            tvUrl += `&${store.apiNameParameter}=${store.searchNameMovie}`
+            axios.get(filmUrl)
                 .then(res => {
                     store.listMovie = res.data.results;
                 }).catch(err => {
-                    console.log('Errore', err);
+                    console.log('Errore sezione film', err);
+                });
+            axios.get(tvUrl)
+                .then(res => {
+                    store.listTv = res.data.results;
+                }).catch(err => {
+                    console.log('Errore sezione tv', err);
                 });
         }
     }, mounted() {
@@ -38,8 +49,9 @@ export default {
     <div>
         <SearchFilm @searchTitle="getFilmData" />
         
-        <ImgMoviePoster :posterFilm="store.listMovie"/>
+        <ImgMoviePoster :posterFilmAndTv="store.listMovie"/>
 
+        <ImgTvPoster :posterFilmAndTv="store.listTv"/>
     </div>
 </template>
 
