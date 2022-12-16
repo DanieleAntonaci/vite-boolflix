@@ -2,16 +2,23 @@
 import { store } from '../store.js';
 // importo axios
 import axios from 'axios';
+import SearchFilm from './SearchFilm.vue';
+
 export default {
+    components: {
+        SearchFilm,
+    }, props: {
+
+    },
     data() {
         return {
             store,
-            searchNameMovie: ''
+
         }
     }, methods: {
         getFilmData() {
             let myUrl = store.apiUrl;
-            myUrl += `&${store.apiNameParameter}=${this.searchNameMovie}`
+            myUrl += `&${store.apiNameParameter}=${store.searchNameMovie}`
             axios.get(myUrl)
                 .then(res => {
                     store.listMovie = res.data.results;
@@ -30,8 +37,8 @@ export default {
 
 <template>
     <div>
-        <input type="text" v-model="searchNameMovie" @keypress.enter="getFilmData">
-        <button @click="getFilmData" >Search</button>
+        <SearchFilm @searchTitle="getFilmData" />
+        
         <div v-for="element in store.listMovie">
         {{ element.title }}
         </div>
