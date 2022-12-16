@@ -23,12 +23,12 @@ export default {
                 <div class="descriptionFilm">
                     <!-- titolo --> 
                     <div>
-                        {{ element.name }}
+                        Titolo: <span class="colorGrey">{{ element.name }}</span>
                     </div> 
                     
                     <!-- titolo originale -->
-                    <div>
-                        {{ element.original_title }}
+                    <div  v-show="element.name != element.original_name">
+                        Titolo original_title: <span class="colorGrey">{{ element.original_name }}</span>
                     </div>
 
                     <!-- bandiera -->
@@ -43,7 +43,7 @@ export default {
                     </div>
 
                     <div>
-                        {{ element.overview }}
+                        Overview: <span class="colorGrey"> {{ element.overview }}</span>
                     </div>}
 
                 </div>

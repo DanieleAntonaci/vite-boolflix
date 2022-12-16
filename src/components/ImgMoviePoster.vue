@@ -35,7 +35,7 @@ export default {
                     </div> 
                     
                     <!-- titolo originale -->
-                    <div>
+                    <div v-show="element.title != element.original_title">
                         Titolo original_title: <span class="colorGrey">{{ element.original_title }}</span>
                     </div>
                     
@@ -44,10 +44,10 @@ export default {
                     <img class="flag" src="/flag/rainbow.png" v-else alt="">
 
                     <!-- voto -->
-                    <div color="fontAwesomeStar">
+                    <div >
                         Voto:
                         <span v-for="i in 5" :key="i" >
-                            <font-awesome-icon icon="fa-solid fa-star"  v-if="Math.floor(element.vote_average / 2) >= i"/>
+                            <font-awesome-icon icon="fa-solid fa-star" v-if="Math.floor(element.vote_average / 2) >= i"/>
                            
                         </span>
 
