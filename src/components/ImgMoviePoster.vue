@@ -31,12 +31,12 @@ export default {
                 <div class="descriptionFilm">
                     <!-- titolo -->
                     <div>
-                        {{ element.title }}
+                        Titolo: <span class="colorGrey">{{ element.title }}</span>
                     </div> 
                     
                     <!-- titolo originale -->
                     <div>
-                        {{ element.original_title }}
+                        Titolo original_title: <span class="colorGrey">{{ element.original_title }}</span>
                     </div>
                     
                     <!-- bandiera -->
@@ -44,16 +44,17 @@ export default {
                     <img class="flag" src="/flag/rainbow.png" v-else alt="">
 
                     <!-- voto -->
-                    <div>
-                        <span v-for="i in 5" :key="i">
-                            <font-awesome-icon icon="fa-solid fa-star" v-if="Math.floor(element.vote_average / 2) >= i"/>
+                    <div color="fontAwesomeStar">
+                        Voto:
+                        <span v-for="i in 5" :key="i" >
+                            <font-awesome-icon icon="fa-solid fa-star"  v-if="Math.floor(element.vote_average / 2) >= i"/>
                            
                         </span>
 
                     </div>
 
                     <div>
-                        {{ element.overview }}
+                        Overview: <span class="colorGrey"> {{ element.overview }}</span>
                     </div>
                 </div>
             </li>  
@@ -95,7 +96,9 @@ ul {
             right: 20px;
             font-size: 20px;
 
-
+            .fontAwesomeStar {
+                color: yellow;
+            }
 
             .flag {
                 width: 40px;
