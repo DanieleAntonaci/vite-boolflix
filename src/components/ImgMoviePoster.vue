@@ -7,14 +7,13 @@ export default {
     data() {
         return {
             store,
-            flag: ['en', 'fr', 'it', 'ja']
+            flag: ['en', 'fr', 'it', 'ja'],
+            avaregeFiveNum: 0
         }
     },
     methods: {
-        avaregeVote() {
 
-        }
-    }
+    },
 }
 </script>
 
@@ -46,7 +45,11 @@ export default {
 
                     <!-- voto -->
                     <div>
-                        {{ element.vote_average }}
+                        <span >
+                            <font-awesome-icon icon="fa-solid fa-star" v-if="starElement"/>
+                            <!-- <font-awesome-icon icon="fa-regular fa-star" /> -->
+                        </span>
+                        {{ Math.floor(element.vote_average / 2) }}
                     </div>
 
                     <div>

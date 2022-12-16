@@ -47,6 +47,10 @@ export default {
 @use '../style/partials/variables' as *;
 
 div {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
     background-color: black;
     display: flex;
     justify-content: space-between;
