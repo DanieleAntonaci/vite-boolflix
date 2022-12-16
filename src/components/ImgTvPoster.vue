@@ -57,13 +57,47 @@ export default {
 @use '../style/partials/mixin';
 @use '../style/partials/variables';
 
-li {
-    .poster {
-        height: 150px;
-    }
+ul {
+    display: flex;
+    flex-wrap: wrap;
 
-    .flag {
-        width: 50px;
+    li {
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+        overflow: auto;
+        // width: calc((100% / 5) - 40px);
+        margin: 20px;
+
+        .poster {
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .descriptionFilm {
+            display: none;
+
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            font-size: 20px;
+
+
+
+            .flag {
+                width: 50px;
+            }
+        }
+
+        &:hover .poster {
+            opacity: .2;
+        }
+
+        &:hover .descriptionFilm {
+            display: block;
+        }
     }
 }
 </style>
