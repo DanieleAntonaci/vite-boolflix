@@ -46,7 +46,7 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="container">
         <SearchFilm @searchTitle="getFilmData" />
         
         <ImgMoviePoster :posterFilmAndTv="store.listMovie"/>
@@ -58,4 +58,10 @@ export default {
 <style lang="scss" scoped>
 @use '../style/partials/mixin';
 @use '../style/partials/variables';
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
 </style>

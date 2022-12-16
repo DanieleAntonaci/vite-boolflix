@@ -18,14 +18,10 @@ export default {
         <h2>Serie tv</h2>
         <ul>
             <li v-for="element in posterFilmAndTv">
-                1.  {{ element.name }}
-                <br>
-                2.  {{ element.original_name }}
-                <br>
                 <img class="poster" :src="store.apiImgUrl + element.poster_path" :alt="element.name">
-                <br>
+                1.  {{ element.name }}
+                2.  {{ element.original_name }}
                 <img class="flag" :src="'/flag/' + element.original_language + '.png'" :alt="element.original_language">
-                <br>
                 4.   {{ element.vote_average }}
                 <!-- bebug -->
                 <hr>

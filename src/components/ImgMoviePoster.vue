@@ -19,17 +19,27 @@ export default {
 
         <ul>
             <li v-for="element in posterFilmAndTv">
-                1.  {{ element.title }}
-                <br>
-                2.  {{ element.original_title }}
-                <br>
+                
+                <!-- poster film -->
                 <img class="poster" :src="store.apiImgUrl + element.poster_path" :alt="element.title">
-                <br>
+                
+                <!-- titolo -->
+                <div>
+                    {{ element.title }}
+                </div> 
+                
+                <!-- titolo originale -->
+                <div>
+                    {{ element.original_title }}
+                </div>
+                
+                <!-- bandiera -->
                 <img class="flag" :src="'/flag/' + element.original_language + '.png'" :alt="element.original_language">
-                <br>
-                4.   {{ element.vote_average }}
-                <!-- bebug -->
-                <hr>
+                
+                <!-- voto -->
+                <div>
+                    {{ element.vote_average }}
+                </div>
             </li>  
         </ul>
         
@@ -42,13 +52,25 @@ export default {
 @use '../style/partials/mixin';
 @use '../style/partials/variables';
 
-li {
-    .poster {
-        height: 150px;
-    }
+ul {
+    display: flex;
+    flex-wrap: wrap;
 
-    .flag {
-        width: 50px;
+    li {
+        display: flex;
+        flex-direction: column;
+
+        width: calc((100% / 5) - 40px);
+        margin: 20px;
+
+        .poster {
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .flag {
+            width: 50px;
+        }
     }
 }
 </style>
