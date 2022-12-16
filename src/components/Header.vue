@@ -35,10 +35,26 @@ export default {
 </script>
 
 <template>
-     <SearchFilm @searchTitle="getFilmData" />
+    <div>
+        <h1>BOOLFLIX</h1>
+
+        <SearchFilm @searchTitle="getFilmData" />
+    </div>
 </template>
 
 <style lang="scss" scoped>
 @use '../style/partials/mixin' as *;
 @use '../style/partials/variables' as *;
+
+div {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+
+    h1 {
+        color: red;
+    }
+}
 </style>

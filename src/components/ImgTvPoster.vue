@@ -19,12 +19,32 @@ export default {
         <ul>
             <li v-for="element in posterFilmAndTv">
                 <img class="poster" :src="store.apiImgUrl + element.poster_path" :alt="element.name">
-                1.  {{ element.name }}
-                2.  {{ element.original_name }}
-                <img class="flag" :src="'/flag/' + element.original_language + '.png'" :alt="element.original_language">
-                4.   {{ element.vote_average }}
-                <!-- bebug -->
-                <hr>
+                 
+                <div class="descriptionFilm">
+                    <!-- titolo --> 
+                    <div>
+                        {{ element.name }}
+                    </div> 
+                    
+                    <!-- titolo originale -->
+                    <div>
+                        {{ element.original_title }}
+                    </div>
+
+                    <!-- bandiera -->
+                    <img class="flag" :src="'/flag/' + element.original_language + '.png'" :alt="element.original_language" v-if="flag.includes(element.original_language)">
+                    <img class="flag" src="/flag/rainbow.png" v-else alt="">
+                    
+                    <!-- voto -->
+                    <div>
+                        {{ element.vote_average }}
+                    </div>
+
+                    <div>
+                        {{ element.overview }}
+                    </div>}
+
+                </div>
             </li>  
         </ul>
         

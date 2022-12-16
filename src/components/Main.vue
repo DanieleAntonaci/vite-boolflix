@@ -40,7 +40,6 @@ export default {
 
 .container {
     width: 90%;
-    max-width: 1000px;
     margin: 30px auto;
 }
 </style>

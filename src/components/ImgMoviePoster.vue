@@ -28,22 +28,30 @@ export default {
                 <!-- poster film -->
                 <img class="poster" :src="store.apiImgUrl + element.poster_path" :alt="element.title">
                 
-                <!-- titolo -->
-                <div>
-                    {{ element.title }}
-                </div> 
-                
-                <!-- titolo originale -->
-                <div>
-                    {{ element.original_title }}
-                </div>
-                
-                <!-- bandiera -->
-                <img class="flag" :src="'/flag/' + element.original_language + '.png'" :alt="element.original_language">
-                
-                <!-- voto -->
-                <div>
-                    {{ element.vote_average }}
+                <!-- elementi che si devono vedere solo all'hover -->
+                <div class="descriptionFilm">
+                    <!-- titolo -->
+                    <div>
+                        {{ element.title }}
+                    </div> 
+                    
+                    <!-- titolo originale -->
+                    <div>
+                        {{ element.original_title }}
+                    </div>
+                    
+                    <!-- bandiera -->
+                    <img class="flag" :src="'/flag/' + element.original_language + '.png'" :alt="element.original_language" v-if="flag.includes(element.original_language)">
+                    <img class="flag" src="/flag/rainbow.png" v-else alt="">
+
+                    <!-- voto -->
+                    <div>
+                        {{ element.vote_average }}
+                    </div>
+
+                    <div>
+                        {{ element.overview }}
+                    </div>
                 </div>
             </li>  
         </ul>
@@ -65,7 +73,9 @@ ul {
         display: flex;
         flex-direction: column;
 
-        width: calc((100% / 5) - 40px);
+        position: relative;
+        overflow: auto;
+        // width: calc((100% / 5) - 40px);
         margin: 20px;
 
         .poster {
@@ -73,8 +83,28 @@ ul {
             object-fit: contain;
         }
 
-        .flag {
-            width: 50px;
+        .descriptionFilm {
+            display: none;
+
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            font-size: 20px;
+
+
+
+            .flag {
+                width: 50px;
+            }
+        }
+
+        &:hover .poster {
+            opacity: .2;
+        }
+
+        &:hover .descriptionFilm {
+            display: block;
         }
     }
 }
