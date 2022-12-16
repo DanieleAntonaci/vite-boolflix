@@ -10,6 +10,11 @@ export default {
             flag: ['en', 'fr', 'it', 'ja']
         }
     },
+    methods: {
+        avaregeVote() {
+
+        }
+    }
 }
 </script>
 
