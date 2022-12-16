@@ -5,12 +5,13 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            store
+            store,
+            searchNameMovie: ''
         }
     }, methods: {
         getFilmData() {
             let myUrl = store.apiUrl;
-            // myUrl += `?${store.apiNameParameter}=${store.selectStatus}`
+            myUrl += `&${store.apiNameParameter}=${this.searchNameMovie}`
             axios.get(myUrl)
                 .then(res => {
                     store.listMovie = res.data.results;
@@ -22,13 +23,15 @@ export default {
                 )
         }
     }, mounted() {
-        this.getFilmData();
+        // this.getFilmData();
     }
 }
 </script>
 
 <template>
     <div>
+        <input type="text" v-model="searchNameMovie" @keypress.enter="getFilmData">
+        <button @click="getFilmData" >Search</button>
         <div v-for="element in store.listMovie">
         {{ element.title }}
         </div>
