@@ -24,12 +24,9 @@ export default {
             axios.get(myUrl)
                 .then(res => {
                     store.listMovie = res.data.results;
-                })
-                .catch(
-                    err => {
-                        console.log('Errore', err);
-                    }
-                )
+                }).catch(err => {
+                    console.log('Errore', err);
+                });
         }
     }, mounted() {
         // this.getFilmData();
