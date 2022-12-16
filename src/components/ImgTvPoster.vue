@@ -39,7 +39,6 @@ export default {
                     <div>
                         <span v-for="i in 5" :key="i">
                             <font-awesome-icon icon="fa-solid fa-star" v-if="Math.floor(element.vote_average / 2) >= i"/>
-                            <!-- <font-awesome-icon icon="fa-regular fa-star" /> -->
                         </span>
                     </div>
 
