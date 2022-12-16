@@ -3,10 +3,12 @@ import { store } from '../store.js';
 // importo axios
 import axios from 'axios';
 import SearchFilm from './SearchFilm.vue';
+import ImgMoviePoster from './ImgMoviePoster.vue';
 
 export default {
     components: {
         SearchFilm,
+        ImgMoviePoster
     }, props: {
 
     },
@@ -39,9 +41,7 @@ export default {
     <div>
         <SearchFilm @searchTitle="getFilmData" />
         
-        <div v-for="element in store.listMovie">
-        {{ element.title }}
-        </div>
+        <ImgMoviePoster :posterFilm="store.listMovie"/>
 
     </div>
 </template>
