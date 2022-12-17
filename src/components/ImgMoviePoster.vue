@@ -21,7 +21,7 @@ export default {
     <div>
         <h2>Fim</h2>
 
-        <ul>
+        <ul class="card">
             <li v-for="element in posterFilmAndTv">
                 
                 <!-- poster film -->
@@ -47,12 +47,13 @@ export default {
                     <div >
                         Voto:
                         <span v-for="i in 5" :key="i" >
-                            <font-awesome-icon icon="fa-solid fa-star" v-if="Math.floor(element.vote_average / 2) >= i"/>
+                            <font-awesome-icon icon="fa-solid fa-star" v-if="Math.ceil(element.vote_average / 2) >= i" :style="{ color: 'yellow' }"/>
+                            <font-awesome-icon icon="fa-solid fa-star" v-else/>
                            
                         </span>
 
                     </div>
-
+                    
                     <div>
                         Overview: <span class="colorGrey"> {{ element.overview }}</span>
                     </div>
@@ -68,50 +69,4 @@ export default {
 <style lang="scss" scoped>
 @use '../style/partials/mixin';
 @use '../style/partials/variables';
-
-ul {
-    display: flex;
-    flex-wrap: wrap;
-
-    li {
-        display: flex;
-        flex-direction: column;
-
-        position: relative;
-        overflow: auto;
-        // width: calc((100% / 5) - 40px);
-        margin: 20px;
-
-        .poster {
-            width: 100%;
-            object-fit: contain;
-        }
-
-        .descriptionFilm {
-            display: none;
-
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            font-size: 20px;
-
-            .fontAwesomeStar {
-                color: yellow;
-            }
-
-            .flag {
-                width: 40px;
-            }
-        }
-
-        &:hover .poster {
-            opacity: .2;
-        }
-
-        &:hover .descriptionFilm {
-            display: block;
-        }
-    }
-}
 </style>

@@ -19,3 +19,49 @@ li {
 .fontAwesomeStar {
     color: #fcba00;
 }
+
+ul.card {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+        overflow: auto;
+        // width: calc((100% / 5) - 40px);
+        margin: 20px;
+
+        .poster {
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .descriptionFilm {
+            display: none;
+
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            font-size: 20px;
+
+            .fontAwesomeStar {
+                color: yellow;
+            }
+
+            .flag {
+                width: 40px;
+            }
+        }
+
+        &:hover .poster {
+            opacity: 0.2;
+        }
+
+        &:hover .descriptionFilm {
+            display: block;
+        }
+    }
+}
