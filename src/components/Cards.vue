@@ -42,11 +42,13 @@ export default {
         <img class="flag" src="/flag/rainbow.png" v-else alt="">
         
         <!-- voto -->
-        
-        <StarOverview  v-for="i in 5"
+        <div>
+            <StarOverview  v-for="i in 5"
             :vote="voteAvarage"
             :numStars="i"
-        />
+            />
+
+        </div>
 
         <!-- recensione -->
         <div>
