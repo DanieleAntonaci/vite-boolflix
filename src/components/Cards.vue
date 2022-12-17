@@ -1,5 +1,6 @@
 <script>
 import { store } from '../store'
+import StarOverview from './StarOverview.vue';
 export default {
     props: {
         titolo: String,
@@ -13,8 +14,9 @@ export default {
         return {
             store,
             flag: ["en", "fr", "it", "ja"],
-        }
+        };
     },
+    components: { StarOverview }
 }
 </script>
 
@@ -40,12 +42,11 @@ export default {
         <img class="flag" src="/flag/rainbow.png" v-else alt="">
         
         <!-- voto -->
-        <div>
-            <span v-for="i in 5" :key="i">
-                <font-awesome-icon icon="fa-solid fa-star" v-if="Math.ceil(voteAvarage / 2) >= i" :style="{ color: 'yellow' }"/>
-                <font-awesome-icon icon="fa-solid fa-star" v-else/>
-            </span>
-        </div>
+        
+        <StarOverview  v-for="i in 5"
+            :vote="voteAvarage"
+            :numStars="i"
+        />
 
         <!-- recensione -->
         <div>
