@@ -17,10 +17,6 @@ export default {
             store,
 
         }
-    }, methods: {
-
-    }, mounted() {
-
     }
 }
 </script>
@@ -28,8 +24,10 @@ export default {
 <template>
     <div class="container">
         
+        <!-- lista film -->
         <ImgMoviePoster :posterFilmAndTv="store.listMovie"/>
 
+        <!-- lista serie tv -->
         <ImgTvPoster :posterFilmAndTv="store.listTv"/>
     </div>
 </template>

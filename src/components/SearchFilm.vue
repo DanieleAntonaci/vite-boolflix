@@ -12,8 +12,12 @@ export default {
 </script>
 <template>
     <div>
+        <!-- campo di imput -->
         <input type="text" @keypress.enter="$emit('searchTitle')" v-model="store.searchNameMovie">
+
+        <!-- bottone di ricerca -->
         <button @click="$emit('searchTitle')" >Search</button>
+
     </div>
 </template>
 

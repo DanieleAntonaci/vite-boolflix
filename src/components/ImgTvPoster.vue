@@ -7,6 +7,7 @@ export default {
     data() {
         return {
             store,
+            // elenco bandiere in public
             flag: ['en', 'fr', 'it', 'ja'],
         }
     },
@@ -16,8 +17,11 @@ export default {
 <template>
     <div>
         <h2>Serie tv</h2>
+        
         <ul class="card">
+
             <li v-for="element in posterFilmAndTv">
+                <!--  -->
                 <img class="poster" :src="store.apiImgUrl + element.poster_path" :alt="element.name">
                  
                 <div class="descriptionFilm">
@@ -39,10 +43,11 @@ export default {
                     <div>
                         <span v-for="i in 5" :key="i">
                             <font-awesome-icon icon="fa-solid fa-star" v-if="Math.ceil(element.vote_average / 2) >= i" :style="{ color: 'yellow' }"/>
-                                <font-awesome-icon icon="fa-solid fa-star" v-else/>
+                            <font-awesome-icon icon="fa-solid fa-star" v-else/>
                         </span>
                     </div>
 
+                    <!-- recensione -->
                     <div>
                         Overview: <span class="colorGrey"> {{ element.overview }}</span>
                     </div>

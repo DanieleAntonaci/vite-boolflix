@@ -15,8 +15,10 @@ export default {
 </script>
 
 <template>
-
+  <!-- header con nav bar -->
   <Header/>
+
+  <!-- elenco film  -->
   <Main/>
 </template>
 

@@ -16,13 +16,16 @@ export default {
             let tvUrl = store.apiTvUrl;
 
             if (store.searchNameMovie != '') {
+                // ricerca il film
                 filmUrl += `&${store.apiNameParameter}=${store.searchNameMovie}`
                 tvUrl += `&${store.apiNameParameter}=${store.searchNameMovie}`
             } else {
+                // mostrai i film e le serie tv popotlari
                 filmUrl = store.apiPopularFilm;
                 tvUrl = store.apiPopularTv;
             }
 
+            // richiesta all'api per film
             axios.get(filmUrl)
                 .then(res => {
                     store.listMovie = res.data.results;
@@ -30,6 +33,7 @@ export default {
                     console.log('Errore sezione film', err);
                 });
 
+            // richiesta all'api per serie tv
             axios.get(tvUrl)
                 .then(res => {
                     store.listTv = res.data.results;

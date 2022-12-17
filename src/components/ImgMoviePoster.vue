@@ -7,6 +7,7 @@ export default {
     data() {
         return {
             store,
+            // elenco bandiere in public
             flag: ['en', 'fr', 'it', 'ja'],
 
         }
@@ -54,6 +55,7 @@ export default {
 
                     </div>
                     
+                    <!-- recenzione -->
                     <div>
                         Overview: <span class="colorGrey"> {{ element.overview }}</span>
                     </div>
