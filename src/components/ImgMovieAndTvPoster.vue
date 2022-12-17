@@ -20,13 +20,9 @@ export default {
         SerieTvOFilm() {
             if (store.listMovie == this.posterFilmAndTv) {
                 this.tipeOfProgram = 'Film'
-                this.titleOfElement = 'element.title'
-                this.titleOriginalOfElement = 'element.original_title'
 
             } else {
                 this.tipeOfProgram = 'Serie Tv';
-                this.titleOfElement = 'element.name'
-                this.titleOriginalOfElement = 'element.original_name'
             }
         }
     },
