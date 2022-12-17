@@ -1,13 +1,12 @@
 <script>
 import { store } from '../store.js';
-import ImgMoviePoster from './ImgMoviePoster.vue';
-import ImgTvPoster from './ImgTvPoster.vue'
+import ImgMovieAndTvPoster from './ImgMovieAndTvPoster.vue';
 
 export default {
     components: {
         // SearchFilm,
-        ImgMoviePoster,
-        ImgTvPoster
+        ImgMovieAndTvPoster,
+
     },
     props: {
 
@@ -25,10 +24,10 @@ export default {
     <div class="container">
         
         <!-- lista film -->
-        <ImgMoviePoster :posterFilmAndTv="store.listMovie"/>
+        <ImgMovieAndTvPoster :posterFilmAndTv="store.listMovie"/>
 
         <!-- lista serie tv -->
-        <ImgTvPoster :posterFilmAndTv="store.listTv"/>
+        <ImgMovieAndTvPoster :posterFilmAndTv="store.listTv"/>
     </div>
 </template>
 
