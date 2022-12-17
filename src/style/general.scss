@@ -30,7 +30,6 @@ ul.card {
         flex-direction: column;
 
         position: relative;
-        overflow: auto;
         // width: calc((100% / 5) - 40px);
         margin: 20px;
 
@@ -40,12 +39,15 @@ ul.card {
         }
 
         .descriptionFilm {
+            overflow: auto;
             display: none;
 
             position: absolute;
             top: 20px;
             left: 20px;
             right: 20px;
+            bottom: 20px;
+
             font-size: 20px;
 
             .fontAwesomeStar {
