@@ -31,6 +31,7 @@ div {
     }
 
     button {
+        cursor: pointer;
         padding: 0 5px;
         border: 0;
         margin-left: 5px;

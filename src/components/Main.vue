@@ -34,9 +34,4 @@ export default {
 <style lang="scss" scoped>
 @use '../style/partials/mixin';
 @use '../style/partials/variables';
-
-.container {
-    width: 90%;
-    margin: 30px auto;
-}
 </style>

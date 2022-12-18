@@ -1,6 +1,7 @@
 <script>
 import { store } from '../store'
 import StarOverview from './StarOverview.vue';
+import Flag from './Flag.vue';
 export default {
     props: {
         titolo: String,
@@ -16,7 +17,7 @@ export default {
             flag: ["en", "fr", "it", "ja"],
         };
     },
-    components: { StarOverview }
+    components: { StarOverview, Flag }
 }
 </script>
 
@@ -38,8 +39,8 @@ export default {
         </div>
 
         <!-- bandiera -->
-        <img class="flag" :src="'/flag/flag-' + language + '.png'" :alt="language" v-if="flag.includes(language)">
-        <img class="flag" src="/flag/flag-rainbow.png" v-else alt="Generic flag">
+        <Flag :lang="language"
+        :flags="flag"/>
         
         <!-- voto -->
         <div>
@@ -60,5 +61,6 @@ export default {
 </template>
 
 <style lang="scss">
-
+@use '../style/partials/mixin';
+@use '../style/partials/variables';
 </style>
