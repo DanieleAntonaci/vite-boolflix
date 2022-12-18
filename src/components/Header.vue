@@ -14,15 +14,16 @@ export default {
         getFilmData() {
             let filmUrl = store.apiFilmUrl;
             let tvUrl = store.apiTvUrl;
+            let keyAndLang = store.apiKey + store.apiLang;
 
             if (store.searchNameMovie != '') {
                 // ricerca il film
-                filmUrl += `&${store.apiNameParameter}=${store.searchNameMovie}`
-                tvUrl += `&${store.apiNameParameter}=${store.searchNameMovie}`
+                filmUrl += `${keyAndLang}&${store.apiNameParameter}=${store.searchNameMovie}`
+                tvUrl += `${keyAndLang}&${store.apiNameParameter}=${store.searchNameMovie}`
             } else {
                 // mostrai i film e le serie tv popotlari
-                filmUrl = store.apiPopularFilm;
-                tvUrl = store.apiPopularTv;
+                filmUrl = store.apiPopularFilm + keyAndLang;
+                tvUrl = store.apiPopularTv + keyAndLang;
             }
 
             // richiesta all'api per film
