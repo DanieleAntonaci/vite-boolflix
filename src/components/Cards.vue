@@ -38,8 +38,8 @@ export default {
         </div>
 
         <!-- bandiera -->
-        <img class="flag" :src="'/flag/' + language + '.png'" :alt="language" v-if="flag.includes(language)">
-        <img class="flag" src="/flag/rainbow.png" v-else alt="">
+        <img class="flag" :src="'/flag/flag-' + language + '.png'" :alt="language" v-if="flag.includes(language)">
+        <img class="flag" src="/flag/flag-rainbow.png" v-else alt="Generic flag">
         
         <!-- voto -->
         <div>
@@ -47,7 +47,6 @@ export default {
             :vote="voteAvarage"
             :numStars="i"
             />
-
         </div>
 
         <!-- recensione -->
