@@ -8,8 +8,13 @@ export default {
 </script>
 <template>
     <span>
+        
+        <!-- se il voto é inferiore a 5 stampa la stella colorata -->
         <font-awesome-icon icon="fa-solid fa-star" v-if="Math.ceil(vote / 2) >= numStars" :style="{ color: 'yellow' }"/>
+        
+        <!-- se il voto é superiore -->
         <font-awesome-icon icon="fa-solid fa-star" v-else/>
+    
     </span>
 </template>
 

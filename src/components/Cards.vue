@@ -2,6 +2,7 @@
 import { store } from '../store'
 import StarOverview from './StarOverview.vue';
 import Flag from './Flag.vue';
+
 export default {
     props: {
         titolo: String,
@@ -39,14 +40,16 @@ export default {
         </div>
 
         <!-- bandiera -->
-        <Flag :lang="language"
-        :flags="flag"/>
+        <Flag 
+            :lang="language"
+            :flags="flag"
+        />
         
         <!-- voto -->
         <div>
             <StarOverview  v-for="i in 5"
-            :vote="voteAvarage"
-            :numStars="i"
+                :vote="voteAvarage"
+                :numStars="i"
             />
         </div>
 

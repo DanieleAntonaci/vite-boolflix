@@ -29,6 +29,7 @@ li {
 ul.card {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
     margin-bottom: 30px;
 
@@ -37,7 +38,7 @@ ul.card {
         flex-direction: column;
 
         position: relative;
-        // width: calc((100% / 5) - 40px);
+
         margin: 20px;
 
         .poster {
