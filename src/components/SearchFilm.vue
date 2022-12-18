@@ -28,13 +28,18 @@ export default {
 div {
     input {
         border: 0;
+        border-radius: 20px 0 0 20px;
+        padding: 0 15px;
     }
 
     button {
         cursor: pointer;
-        padding: 0 5px;
+        padding: 0 15px;
         border: 0;
-        margin-left: 5px;
+
+        background-color: red;
+        color: white;
+        border-radius: 0 20px 20px 0;
     }
 }
 </style>

@@ -8,13 +8,16 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons'
+import { faStar as farStar } from '@fortawesome/free-regular-svg-icons'
+
 
 // struttura per html
 /* <font-awesome-icon icon="fa-solid fa-user-secret" /> */
 
 /* add icons to the library */
-library.add(faStar)
+library.add(fasStar, farStar)
+
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)

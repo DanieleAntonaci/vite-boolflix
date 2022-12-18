@@ -39,7 +39,7 @@ export default {
 
         <ul class="card">
             <Cards  v-for="element in posterFilmAndTv"
-            :titolo="element.name ? element.name : element.title"
+            :title="element.name ? element.name : element.title"
             :originalTitle="element.original_name ? element.original_name : element.original_title"
             :poster="store.apiImgUrl + element.poster_path"
             :language="element.original_language"
@@ -55,4 +55,8 @@ export default {
 <style lang="scss" scoped>
 @use '../style/partials/mixin';
 @use '../style/partials/variables';
+
+h2 {
+    text-align: center;
+}
 </style>

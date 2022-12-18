@@ -5,7 +5,7 @@ import Flag from './Flag.vue';
 
 export default {
     props: {
-        titolo: String,
+        title: String,
         originalTitle: String,
         poster: String,
         language: String,
@@ -26,16 +26,16 @@ export default {
 
 <li>
     <!-- img poster -->
-    <img class="poster" :src="poster" :alt="titolo">
+    <img class="poster" :src="poster" :alt="title">
         
     <div class="descriptionFilm">
         <!-- titolo --> 
         <div>
-            Titolo: <span class="colorGrey">{{ titolo }}</span>
+            Titolo: <span class="colorGrey">{{ title }}</span>
         </div> 
         
         <!-- titolo originale -->
-        <div  v-show="titolo != originalTitle">
+        <div  v-show="title != originalTitle">
             Titolo original_title: <span class="colorGrey">{{ originalTitle }}</span>
         </div>
 
