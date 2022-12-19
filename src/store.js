@@ -4,10 +4,12 @@ import { reactive } from 'vue';
 export const store = reactive({
     listMovie: [],
     listTv: [],
+    arrayActor: [],
     apiFilmUrl: 'https://api.themoviedb.org/3/search/movie?',
     apiTvUrl: 'https://api.themoviedb.org/3/search/tv?',
     apiPopularFilm: 'https://api.themoviedb.org/3/trending/movie/week?',
     apiPopularTv: 'https://api.themoviedb.org/3/trending/tv/week?',
+    apiActorName: 'https://api.themoviedb.org/3/',
     apiNameParameter: 'query',
     searchNameMovie: '',
     apiImgUrl: "https://image.tmdb.org/t/p/w342",

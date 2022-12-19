@@ -44,7 +44,8 @@ export default {
             :poster="store.apiImgUrl + element.poster_path"
             :language="element.original_language"
             :overview="element.overview"
-            :voteAvarage="element.vote_average"/>
+            :voteAvarage="element.vote_average"
+            :idFilm="element.id"/>
         </ul>
         
     </div>

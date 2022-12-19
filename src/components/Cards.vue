@@ -2,6 +2,7 @@
 import { store } from '../store'
 import StarOverview from './StarOverview.vue';
 import Flag from './Flag.vue';
+import Actor from './Actor.vue';
 
 export default {
     props: {
@@ -10,7 +11,8 @@ export default {
         poster: String,
         language: String,
         overview: String,
-        voteAvarage: Number
+        voteAvarage: Number,
+        idFilm: Number,
     },
     data() {
         return {
@@ -18,7 +20,7 @@ export default {
             flag: ["en", "fr", "it", "ja"],
         };
     },
-    components: { StarOverview, Flag }
+    components: { StarOverview, Flag, Actor }
 }
 </script>
 
@@ -41,6 +43,8 @@ export default {
         <div  v-show="title != originalTitle">
             Titolo original_title: <span class="colorGrey">{{ originalTitle }}</span>
         </div>
+
+        <Actor :id="idFilm"/>
 
         <!-- bandiera -->
         <Flag 
