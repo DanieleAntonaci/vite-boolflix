@@ -26,8 +26,11 @@ export default {
 
 <li>
     <!-- img poster -->
-    <img class="poster" :src="poster" :alt="title">
-        
+    <div>
+        <img class="poster" :src="poster" :alt="title" onerror="this.src='./public/not-found-img.jpeg'">
+        <!-- <img src="/public/not-found-img.jpeg" v-else alt="ss"> -->
+
+    </div>
     <div class="descriptionFilm">
         <!-- titolo --> 
         <div>
@@ -66,4 +69,9 @@ export default {
 <style lang="scss">
 @use '../style/partials/mixin';
 @use '../style/partials/variables';
+
+.emptyImg {
+    width: 342;
+    height: 513px;
+}
 </style>

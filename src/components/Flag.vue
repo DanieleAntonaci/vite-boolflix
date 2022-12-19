@@ -2,7 +2,7 @@
 export default {
     props: {
         lang: String,
-        flags: String
+        flags: Array
     }
 }
 </script>
