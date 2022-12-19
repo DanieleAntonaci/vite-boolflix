@@ -44,7 +44,7 @@ export default {
             Titolo original_title: <span class="colorGrey">{{ originalTitle }}</span>
         </div>
 
-        <Actor :id="idFilm"/>
+        <!-- <Actor :id="idFilm"/> -->
 
         <!-- bandiera -->
         <Flag 

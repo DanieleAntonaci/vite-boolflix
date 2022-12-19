@@ -8,27 +8,35 @@ export default {
     data() {
         return {
             store,
-            arrayActor: []
+            arrayActor: [],
         }
     },
     methods: {
         getActorName() {
             this.arrayActor = [];
-            let urlActor = `https://api.themoviedb.org/3/movie/19995/credits?api_key=f2dd65c246c2c5025da163d72094519d&language=it`
-            // let urlActor = `${store.apiActorName}movie/${this.id}/credits?${store.apiKey}${store.apiLang}`
-            console.log(urlActor);
-            axios.get(urlActor).then(res => {
-                for (let i = 0; i < 5; i++) {
-                    this.arrayActor += res.data.cast[i].name;
-                }
 
-            }).catch(err => {
-                console.log('sbagliato');
-            })
+            let urlActorMovie = `${store.apiActorName}movie/${this.id}/credits?${store.apiKey}${store.apiLang}`
+            let urlActorTv = `${store.apiActorName}tv/${this.id}/credits?${store.apiKey}${store.apiLang}`
+
+            axios.get(urlActorMovie)
+                .then(res => {
+                    this.arrayActor = res.data.cast;
+
+                }).catch(err => {
+                    console.log('sbagliato', err);
+                });
+
+            axios.get(urlActorTv)
+                .then(res => {
+                    this.arrayActor = res.data.cast;
+
+                }).catch(err => {
+                    console.log('sbagliato', err);
+                })
         }
 
     },
-    mounted() {
+    created() {
         this.getActorName()
     }
 }
@@ -36,8 +44,11 @@ export default {
 <template>
 <div>
     Attori: 
-    <span v-for="actor in arrayActor">
-        {{ actor }}
+    <span v-for="(actor, index) in arrayActor">
+        <span class="colorGrey" v-if="index < 5">
+
+            {{ actor.name }} {{ index < 4 ? ', ' : '' }}
+        </span>
     </span>
 </div>
 
