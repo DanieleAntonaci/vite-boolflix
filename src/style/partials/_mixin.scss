@@ -1,0 +1,13 @@
+@mixin displayFlex($attribute) {
+    display: flex;
+    @if $attribute == "s-b" {
+        justify-content: space-between;
+    } @else if $attribute == "center" {
+        justify-content: center;
+    } @else if $attribute == "direction-col" {
+        flex-direction: column;
+    } @else if $attribute == "wrap-center" {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+} ;

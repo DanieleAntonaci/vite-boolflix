@@ -22,8 +22,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use '../style/partials/mixin';
-@use '../style/partials/variables';
+@use '../style/partials/mixin' as *;
+@use '../style/partials/variables' as*;
 
 #header {
     height: 38px;
@@ -39,7 +39,7 @@ export default {
         padding: 0 15px;
         border: 0;
 
-        background-color: red;
+        background-color: $primaryColor;
         color: white;
         border-radius: 0 20px 20px 0;
 

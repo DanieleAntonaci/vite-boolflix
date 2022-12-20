@@ -1,3 +1,6 @@
+@use "../style/partials/mixin" as *;
+@use "../style/partials/variables" as *;
+
 * {
     margin: 0;
     padding: 0;
@@ -28,16 +31,12 @@ li {
 
 // layout delle card
 ul.card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    @include displayFlex(wrap-center);
 
     margin-bottom: 30px;
 
     li {
-        display: flex;
-        flex-direction: column;
-
+        @include displayFlex(direction-col);
         position: relative;
 
         margin: 20px;
