@@ -62,8 +62,6 @@ export default {
 @use '../style/partials/variables' as *;
 
 div {
-
-    z-index: 999;
     height: 50px;
     background-color: black;
     @include displayFlex(s-b);

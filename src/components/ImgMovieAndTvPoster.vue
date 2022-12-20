@@ -59,5 +59,6 @@ export default {
 
 h2 {
     text-align: center;
+    padding-top: 20px;
 }
 </style>
