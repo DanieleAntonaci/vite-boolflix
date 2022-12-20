@@ -18,6 +18,7 @@ export default {
             let urlActorMovie = `${store.apiActorName}movie/${this.id}/credits?${store.apiKey}${store.apiLang}`
             let urlActorTv = `${store.apiActorName}tv/${this.id}/credits?${store.apiKey}${store.apiLang}`
 
+            // richiesta per i film 
             axios.get(urlActorMovie)
                 .then(res => {
                     this.arrayActor = res.data.cast;
@@ -26,6 +27,7 @@ export default {
                     console.log('sbagliato', err);
                 });
 
+            // richiesta per le serie tv
             axios.get(urlActorTv)
                 .then(res => {
                     this.arrayActor = res.data.cast;

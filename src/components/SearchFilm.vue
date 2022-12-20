@@ -26,7 +26,8 @@ export default {
 @use '../style/partials/variables' as*;
 
 #header {
-    height: 38px;
+    height: 33px;
+    margin: auto 0;
 
     input {
         border: 0;

@@ -18,6 +18,7 @@ export default {
     },
     methods: {
         SerieTvOFilm() {
+            // se é un film o una serie tv cambia il titolo
             if (store.listMovie == this.posterFilmAndTv) {
                 this.tipeOfProgram = 'Film'
 
@@ -35,9 +36,11 @@ export default {
 
 <template>
     <div>
+
         <h2>{{ tipeOfProgram }}</h2>
 
         <ul class="card">
+            <!-- loop delle carde che devono cpoarire a schermo -->
             <Cards  v-for="element in posterFilmAndTv"
             :title="element.name ? element.name : element.title"
             :originalTitle="element.original_name ? element.original_name : element.original_title"
