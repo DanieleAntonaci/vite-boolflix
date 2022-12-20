@@ -62,16 +62,16 @@ export default {
 @use '../style/partials/variables' as *;
 
 div {
-    position: sticky;
-    top: 0;
-    left: 0;
+    // position: sticky;
+    // top: 0;
+    // left: 0;
     z-index: 999;
-
+    height: 50px;
     background-color: black;
     display: flex;
     justify-content: space-between;
 
-    padding: 10px 30px;
+    padding: 5px 30px;
 
     h1 {
         color: red;

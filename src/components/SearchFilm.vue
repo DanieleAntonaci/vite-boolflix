@@ -11,7 +11,7 @@ export default {
 }
 </script>
 <template>
-    <div>
+    <div id="header">
         <!-- campo di imput -->
         <input type="text" @keypress.enter="$emit('searchTitle')" v-model="store.searchNameMovie">
 
@@ -25,7 +25,9 @@ export default {
 @use '../style/partials/mixin';
 @use '../style/partials/variables';
 
-div {
+#header {
+    height: 38px;
+
     input {
         border: 0;
         border-radius: 20px 0 0 20px;
@@ -40,6 +42,10 @@ div {
         background-color: red;
         color: white;
         border-radius: 0 20px 20px 0;
+
+        &:hover {
+            background-color: rgb(185, 0, 0);
+        }
     }
 }
 </style>

@@ -15,15 +15,22 @@ export default {
 </script>
 
 <template>
-  <!-- header con nav bar -->
-  <Header/>
+  <div id="container">
 
-  <!-- elenco film  -->
-  <Main/>
+    <!-- header con nav bar -->
+    <Header/>
+    
+    <!-- elenco film  -->
+    <Main/>
+  </div>
 </template>
 
 <style lang="scss">
 @use './style/general.scss' as *;
 @use './style/partials/mixin' as *;
 @use './style/partials/variables' as *;
+
+#container {
+  height: 100vh;
+}
 </style>

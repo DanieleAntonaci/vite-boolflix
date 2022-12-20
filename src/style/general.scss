@@ -21,7 +21,9 @@ li {
 }
 
 .container {
-    margin: 30px auto;
+    margin: 0 auto;
+    height: calc(100vh - 50px);
+    overflow: auto;
 }
 
 // layout delle card
